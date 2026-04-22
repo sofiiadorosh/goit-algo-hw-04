@@ -13,7 +13,6 @@ def koch_curve(t, order, size):
 def draw_snowflake(order, size=300):
     window = Screen()
     window.bgcolor("white")
-    window.title(f"Koch Snowflake - Level {order}")
 
     t = Turtle()
     t.speed(0)
@@ -31,15 +30,13 @@ def draw_snowflake(order, size=300):
 
 
 if __name__ == "__main__":
-    while True:
-        try:
-            user_input = int(input("Enter recursion level (0-5): "))
+    try:
+        user_input = int(input("Enter recursion level (0-5): "))
 
-            if user_input < 0:
-                print("Error: please enter a non-negative integer.")
-            else:
-                draw_snowflake(user_input)
-                break
+        if user_input < 0:
+            print("Error: please enter a non-negative integer.")
+        else:
+            draw_snowflake(user_input)
 
-        except ValueError:
-            print("Error: invalid integer. Please try again.")
+    except ValueError:
+        print("Error: invalid integer. Please try again.")
