@@ -26,17 +26,20 @@ def draw_snowflake(order, size=300):
         koch_curve(t, order, size)
         t.right(120)
 
-    print("Drawing complete. Close the window to exit.")
-    window.mainloop()
+    print("Click on the window to exit.")
+    window.exitonclick()
 
 
 if __name__ == "__main__":
-    try:
-        user_input = int(input("Enter recursion level (recommended 0-5): "))
+    while True:
+        try:
+            user_input = int(input("Enter recursion level (0-5): "))
 
-        if user_input < 0:
-            print("Please enter a non-negative integer.")
-        else:
-            draw_snowflake(user_input)
-    except ValueError:
-        print("Invalid input. Please enter integer.")
+            if user_input < 0:
+                print("Error: please enter a non-negative integer.")
+            else:
+                draw_snowflake(user_input)
+                break
+
+        except ValueError:
+            print("Error: invalid integer. Please try again.")
