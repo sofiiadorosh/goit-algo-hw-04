@@ -27,7 +27,7 @@ def get_arguments():
     except IndexError:
         destination = Path("dist")
 
-    if not source.exists():
+    if not source.exists() or not source.is_dir():
         print("Error: source path does not exist")
         return None
 
