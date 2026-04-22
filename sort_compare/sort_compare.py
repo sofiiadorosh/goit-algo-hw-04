@@ -49,7 +49,7 @@ def merge(left, right):
 def compare_sort():
     sizes = [100, 1000, 5000]
 
-    print(f"{'Algorithm':<18} | {'Size':<6} | {'Time (seconds)':<15}")
+    print(f"{'Algorithm':<20} | {'Size':<10} | {'Time (s)':<15}")
     print("-" * 45)
 
     for size in sizes:
@@ -57,13 +57,13 @@ def compare_sort():
 
         if size <= 5000:
             time_insertion = timeit.timeit(lambda: insertion_sort(data.copy()), number=5)
-            print(f"{'Insertion Sort':<18} | {size:<6} | {time_insertion / 5:.6f}")
+            print(f"{'Insertion Sort':<20} | {size:<10} | {time_insertion / 5:.6f}")
 
         time_merge = timeit.timeit(lambda: merge_sort(data.copy()), number=5)
-        print(f"{'Merge Sort':<18} | {size:<6} | {time_merge / 5:.6f}")
+        print(f"{'Merge Sort':<20} | {size:<10} | {time_merge / 5:.6f}")
 
         time_timsort = timeit.timeit(lambda: sorted(data.copy()), number=5)
-        print(f"{'Timsort (sorted)':<18} | {size:<6} | {time_timsort / 5:.6f}")
+        print(f"{'Timsort (sorted)':<20} | {size:<10} | {time_timsort / 5:.6f}")
         print("-" * 45)
 
 
